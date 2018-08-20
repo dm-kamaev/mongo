@@ -73,6 +73,7 @@ Authors.static('find_authors_with_books', function(author_birth_date, books_publ
         }
       }
     }, {
+      // join books to author where author._id = book.author_id 
       $lookup: {
         from: 'books',
         localField: '_id',
@@ -84,6 +85,7 @@ Authors.static('find_authors_with_books', function(author_birth_date, books_publ
     {
       "$unwind": "$books"
     },
+    // search by year in joined book
     {
       $match:{
         "books.publish_date": books_publish_date || 1831
