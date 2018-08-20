@@ -4,7 +4,7 @@
 
   db.authors.find().pretty()
   
-  use authors
+  use books
   db.books.find().pretty()
 ```
 
