@@ -1,8 +1,11 @@
 ```
   use test
-  use author
+  use authors
 
-  db.author.find().pretty()
+  db.authors.find().pretty()
+  
+  use authors
+  db.books.find().pretty()
 ```
 
 ```
